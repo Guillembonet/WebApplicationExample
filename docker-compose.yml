@@ -1,0 +1,13 @@
+version: '3'
+services:
+  api:
+    build: WebApplicationExample
+    ports:
+      - "54767:80"
+  sqlserver:
+    build:
+      context: SQLDB
+      args:
+        - SA_PASSWORD=Passw0rd
+    ports: 
+      - "1433:1433"
